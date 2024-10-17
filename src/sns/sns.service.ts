@@ -9,9 +9,9 @@ export class SnsService {
   private snsClient: SNSClient;
   private topicArn: string;
 
-  constructor(private readonly configService: ConfigService) {
-    const region = this.configService.get<string>('AWS_REGION');
-    this.topicArn = this.configService.get<string>('SNS_TOPIC_ARN');
+  constructor() {
+    const region = "us-east-2";
+    this.topicArn = "arn:aws:sns:us-east-2:908027377460:Incidentes_create_pqrs";
     this.snsClient = new SNSClient({ region });
   }
 
